@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  background-color: hsl(30, 38%, 92%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  color: hsl(228, 12%, 48%);
+  max-width: 700px;
+}
+
+.attribution a {
+  color: hsl(158, 36%, 37%);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+.product-card {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+}
+@media (min-width: 768px) {
+  .product-card {
+    flex-direction: row;
+    max-width: 700px;
+  }
+}
+.product-card .product-image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-card .product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.product-card .product-info .category {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: hsl(228, 12%, 48%);
+}
+.product-card .product-info h1 {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+  color: black;
+}
+.product-card .product-info .description {
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.5;
+}
+.product-card .product-info .price-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.product-card .product-info .price-section .current-price {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+  color: hsl(158, 36%, 37%);
+}
+.product-card .product-info .price-section .old-price {
+  text-decoration: line-through;
+  color: hsl(228, 12%, 48%);
+}
+.product-card .product-info .add-to-cart {
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.product-card .product-info .add-to-cart:hover {
+  background-color: hsl(158, 42%, 18%);
+}
+
+@media (max-width: 767px) {
+  .product-card {
+    border-radius: 10px;
+  }
+  .product-card .product-image img {
+    border-radius: 10px 10px 0 0;
+  }
+  .product-info {
+    padding: 1.25rem;
+  }
+  .product-info h1 {
+    font-size: 1.5rem;
+  }
+  .product-info .price-section {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+  .product-info .add-to-cart {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

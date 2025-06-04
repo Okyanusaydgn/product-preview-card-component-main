@@ -1,0 +1,144 @@
+@use "variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-paragraph;
+  background-color: $cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  color: $grey;
+  max-width: 700px;
+}
+.attribution a {
+  color: hsl(158, 36%, 37%);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+.product-card {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .product-image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .category {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      color: $grey;
+    }
+
+    h1 {
+      font-family: $font-heading;
+      font-size: 1.8rem;
+      color: black;
+    }
+
+    .description {
+      font-size: 14px;
+      color: $grey;
+      line-height: 1.5;
+    }
+
+    .price-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .current-price {
+        font-family: $font-heading;
+        font-size: 1.8rem;
+        color: $green-500;
+      }
+
+      .old-price {
+        text-decoration: line-through;
+        color: $grey;
+      }
+    }
+
+    .add-to-cart {
+      background-color: $green-500;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 1rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $green-700;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .product-card {
+    border-radius: 10px;
+
+    .product-image img {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .product-info {
+    padding: 1.25rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .price-section {
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .add-to-cart {
+      width: 100%;
+    }
+  }
+}
